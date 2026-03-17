@@ -1,100 +1,102 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import DashboardMockup from './DashboardMockup'
 
 const fadeUp = (delay = 0) => ({
-  initial: { opacity: 0, y: 28 },
+  initial: { opacity: 0, y: 24 },
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.7, delay, ease: [0.21, 0.47, 0.32, 0.98] },
 })
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#F7F6F3]">
-      {/* Decorative blobs */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.85 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.4, ease: 'easeOut' }}
-          className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-[#E8EFFF] blur-3xl"
-        />
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.7 }}
-          transition={{ duration: 1.6, delay: 0.4 }}
-          className="absolute bottom-10 -left-20 w-80 h-80 rounded-full bg-[#FFF3EE] blur-3xl"
-        />
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.5 }}
-          transition={{ duration: 1.4, delay: 0.6 }}
-          className="absolute top-1/3 left-1/3 w-48 h-48 rounded-full bg-[#E8EFFF] blur-2xl"
-        />
-      </div>
+    <section className="relative min-h-screen bg-[#0A0F1E] flex items-center overflow-hidden">
+      {/* Grid background */}
+      <div
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage:
+            'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)',
+          backgroundSize: '40px 40px',
+        }}
+      />
 
-      <div className="relative max-w-6xl mx-auto px-6 pt-36 pb-24">
-        {/* Badge */}
-        <motion.div {...fadeUp(0)} className="mb-8">
-          <span className="inline-flex items-center gap-2 bg-[#E8EFFF] text-[#0047FF] text-sm font-body font-medium px-4 py-2 rounded-full">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#0047FF] animate-pulse" />
-            Automation & Data Intelligence
-          </span>
-        </motion.div>
+      {/* Glow */}
+      <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[#2563EB] opacity-[0.06] blur-3xl pointer-events-none" />
 
-        {/* Headline */}
-        <motion.h1
-          {...fadeUp(0.1)}
-          className="font-display font-extrabold text-5xl md:text-6xl lg:text-[5.25rem] text-[#0F0F1A] leading-[1.04] tracking-tight mb-6 max-w-4xl"
-        >
-          Automate your business.{' '}
-          <span className="text-[#0047FF]">Control your data.</span>{' '}
-          Make better decisions.
-        </motion.h1>
+      <div className="relative max-w-7xl mx-auto px-6 pt-28 pb-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
 
-        {/* Subtitle */}
-        <motion.p
-          {...fadeUp(0.22)}
-          className="font-body text-lg md:text-xl text-[#6B6B7A] max-w-2xl mb-12 leading-relaxed"
-        >
-          Ayudo a empresas a eliminar tareas manuales, organizar su información y
-          construir sistemas que funcionan todos los días.
-        </motion.p>
+        {/* Left: copy */}
+        <div>
+          <motion.div {...fadeUp(0)} className="mb-6">
+            <span className="inline-flex items-center gap-2 text-xs font-semibold text-[#2563EB] bg-[#2563EB]/10 border border-[#2563EB]/20 px-4 py-2 rounded-full">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB] animate-pulse" />
+              Especialistas en hostelería
+            </span>
+          </motion.div>
 
-        {/* CTA */}
-        <motion.div {...fadeUp(0.34)}>
-          <a
-            href="#contacto"
-            className="inline-flex items-center gap-2.5 bg-[#0047FF] text-white font-body font-semibold text-base px-8 py-4 rounded-2xl hover:bg-[#0038CC] transition-colors duration-200 shadow-[0_4px_16px_rgba(0,71,255,0.24)]"
+          <motion.h1
+            {...fadeUp(0.1)}
+            className="font-display font-extrabold text-4xl md:text-5xl lg:text-5xl xl:text-[3.2rem] text-white leading-[1.1] tracking-tight mb-5"
           >
-            Start a project
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
-              <path
-                d="M3 8h10M9 4l4 4-4 4"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </a>
-        </motion.div>
+            Controla los costes.{' '}
+            <span className="text-[#2563EB]">Conoce tu margen.</span>{' '}
+            Gestiona con datos.
+          </motion.h1>
 
-        {/* Scroll hint */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.2 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1"
-        >
-          <span className="font-body text-xs text-[#6B6B7A]">Scroll</span>
+          <motion.p
+            {...fadeUp(0.2)}
+            className="font-body text-lg text-[#94A3B8] leading-relaxed mb-8 max-w-lg"
+          >
+            Dashboards de ventas, control de stock, escandallos y automatización
+            para restaurantes que quieren dejar de gestionar a ciegas.
+          </motion.p>
+
+          <motion.div {...fadeUp(0.3)} className="flex flex-wrap gap-3">
+            <a
+              href="#contacto"
+              className="inline-flex items-center gap-2 bg-[#2563EB] text-white font-body font-semibold px-7 py-3.5 rounded-xl hover:bg-[#1D4ED8] transition-colors duration-200 shadow-[0_4px_20px_rgba(37,99,235,0.35)]"
+            >
+              Solicitar demo
+              <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden>
+                <path d="M2.5 7.5h10M9 3.5l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </a>
+            <a
+              href="#soluciones"
+              className="inline-flex items-center gap-2 text-[#94A3B8] font-body font-medium px-7 py-3.5 rounded-xl border border-[#1E293B] hover:border-[#334155] hover:text-white transition-all duration-200"
+            >
+              Ver servicios
+            </a>
+          </motion.div>
+
+          {/* Trust bar */}
           <motion.div
-            animate={{ y: [0, 5, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className="w-px h-8 bg-gradient-to-b from-[#6B6B7A] to-transparent"
-          />
-        </motion.div>
+            {...fadeUp(0.45)}
+            className="mt-10 pt-8 border-t border-[#1E293B] flex items-center gap-6"
+          >
+            {[
+              { value: '70%+', label: 'menos tiempo en reporting' },
+              { value: '€0', label: 'costes de plataforma SaaS' },
+              { value: '48h', label: 'entrega primer prototipo' },
+            ].map((stat) => (
+              <div key={stat.label}>
+                <p className="font-display font-bold text-lg text-white">{stat.value}</p>
+                <p className="text-xs text-[#64748B] leading-tight">{stat.label}</p>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* Right: dashboard */}
+        <div className="flex justify-center lg:justify-end">
+          <DashboardMockup />
+        </div>
       </div>
+
+      {/* Bottom fade to light */}
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#F8F9FA] to-transparent" />
     </section>
   )
 }
