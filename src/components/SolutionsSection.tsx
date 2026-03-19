@@ -152,15 +152,35 @@ export default function SolutionsSection() {
                 initial={{ opacity: 0, x: 16 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.3, delay: i * 0.06 }}
-                className="flex items-start gap-3 bg-[#F8F9FA] rounded-xl p-4 border border-[#E2E8F0]"
+                whileHover={{ scale: 1.02 }}
+                className="group relative flex items-start gap-3 bg-[#F8F9FA] hover:bg-white rounded-xl p-4 border border-[#E2E8F0] overflow-hidden cursor-default transition-all duration-200"
+                style={{
+                  ['--accent' as string]: groups[active].accent,
+                }}
               >
+                {/* Glow de fondo */}
                 <div
-                  className="w-2 h-2 rounded-full mt-1.5 flex-shrink-0"
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"
+                  style={{ background: `linear-gradient(135deg, ${groups[active].accent}08, transparent)` }}
+                />
+                {/* Borde izquierdo que se enciende */}
+                <div
+                  className="absolute left-0 top-0 w-0.5 h-0 group-hover:h-full rounded-full transition-all duration-300"
                   style={{ backgroundColor: groups[active].accent }}
                 />
-                <div>
-                  <p className="font-body font-semibold text-sm text-[#0F172A]">
-                    {item.name}
+
+                <div
+                  className="relative w-2 h-2 rounded-full mt-1.5 flex-shrink-0 transition-transform duration-200 group-hover:scale-125"
+                  style={{ backgroundColor: groups[active].accent }}
+                />
+                <div className="relative">
+                  <p
+                    className="font-body font-semibold text-sm text-[#0F172A] transition-colors duration-200"
+                    style={{ color: undefined }}
+                  >
+                    <span className="group-hover:text-current" style={{ color: 'inherit' }}>
+                      {item.name}
+                    </span>
                   </p>
                   <p className="font-body text-xs text-[#64748B] mt-0.5">{item.detail}</p>
                 </div>
