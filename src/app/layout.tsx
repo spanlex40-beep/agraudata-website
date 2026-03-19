@@ -17,6 +17,7 @@ const dmSans = DM_Sans({
 })
 
 export const metadata: Metadata = {
+  icons: { icon: '/favicon.svg' },
   title: 'AgrauData — Automation & Data Intelligence Consultant',
   description:
     'Ayudo a empresas a automatizar procesos y tomar mejores decisiones con datos. Servicios de Business Intelligence, automatización y análisis financiero.',

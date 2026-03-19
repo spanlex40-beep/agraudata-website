@@ -30,11 +30,8 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a
-          href="/"
-          className="font-display font-bold text-lg text-white tracking-tight hover:text-[#2563EB] transition-colors duration-200"
-        >
-          AgrauData
+        <a href="/" className="flex items-center">
+          <img src="/logo.svg" alt="AgrauData" height={36} style={{ height: '36px', width: 'auto' }} />
         </a>
 
         <div className="flex items-center gap-6">

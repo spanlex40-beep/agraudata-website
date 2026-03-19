@@ -30,8 +30,8 @@ export default function Hero() {
         {/* Left: copy */}
         <div>
           <motion.div {...fadeUp(0)} className="mb-6">
-            <span className="inline-flex items-center gap-2 text-xs font-semibold text-[#2563EB] bg-[#2563EB]/10 border border-[#2563EB]/20 px-4 py-2 rounded-full">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB] animate-pulse" />
+            <span className="inline-flex items-center gap-2 text-xs font-semibold text-[#c8f135] bg-[#c8f135]/10 border border-[#c8f135]/20 px-4 py-2 rounded-full">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#c8f135] animate-pulse" />
               Especialistas en hostelería
             </span>
           </motion.div>
@@ -77,12 +77,12 @@ export default function Hero() {
             className="mt-10 pt-8 border-t border-[#1E293B] flex items-center gap-6"
           >
             {[
-              { value: '70%+', label: 'menos tiempo en reporting' },
-              { value: '€0', label: 'costes de plataforma SaaS' },
-              { value: '48h', label: 'entrega primer prototipo' },
+              { value: '70%+', label: 'menos tiempo en reporting', green: true },
+              { value: '€0', label: 'costes de plataforma SaaS', green: false },
+              { value: '100%', label: 'tuyo, sin suscripciones', green: false },
             ].map((stat) => (
               <div key={stat.label}>
-                <p className="font-display font-bold text-lg text-white">{stat.value}</p>
+                <p className={`font-display font-bold text-lg ${stat.green ? 'text-[#c8f135]' : 'text-white'}`}>{stat.value}</p>
                 <p className="text-xs text-[#64748B] leading-tight">{stat.label}</p>
               </div>
             ))}
