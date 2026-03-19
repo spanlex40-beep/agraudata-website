@@ -46,6 +46,13 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p
+            {...fadeUp(0.15)}
+            className="font-display font-semibold text-xl text-[#c8f135] mb-3"
+          >
+            Deja que los datos trabajen por ti.
+          </motion.p>
+
+          <motion.p
             {...fadeUp(0.2)}
             className="font-body text-lg text-[#94A3B8] leading-relaxed mb-8 max-w-lg"
           >

@@ -5,7 +5,7 @@ export default function Footer() {
         <img src="/logo.svg" alt="AgrauData" style={{ height: '32px', width: 'auto' }} />
         <p className="font-body text-xs text-[#475569]">
           © AgrauData · 2025 ·{' '}
-          <span className="text-[#c8f135]/70">Especialistas en hostelería</span>
+          <span className="text-[#c8f135]/70">Deja que los datos trabajen por ti.</span>
         </p>
         <a
           href="mailto:info@agraudata.com"
