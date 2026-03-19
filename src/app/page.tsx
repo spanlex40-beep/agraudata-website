@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
+import ServicesStrip from '@/components/ServicesStrip'
 import ProblemsSection from '@/components/ProblemsSection'
 import SolutionsSection from '@/components/SolutionsSection'
 import OtherSectorsSection from '@/components/OtherSectorsSection'
@@ -11,6 +12,7 @@ export default function Home() {
     <>
       <Navbar />
       <Hero />
+      <ServicesStrip />
       <ProblemsSection />
       <SolutionsSection />
       <OtherSectorsSection />
