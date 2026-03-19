@@ -67,18 +67,27 @@ export default function ProblemsSection() {
               initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className={`bg-white rounded-2xl p-6 border border-[#E2E8F0] ${
+              whileHover={{ scale: 1.02 }}
+              className={`group relative bg-white rounded-2xl p-6 border border-[#E2E8F0] overflow-hidden cursor-default transition-all duration-300 hover:border-[#EF4444]/40 hover:shadow-[0_0_32px_rgba(239,68,68,0.12)] ${
                 i === 4 ? 'md:col-span-2 lg:col-span-1' : ''
               }`}
             >
-              <div className="text-2xl mb-3">{p.icon}</div>
-              <div className="font-display font-bold text-2xl text-[#EF4444] mb-1">
-                {p.stat}
+              {/* Glow de fondo al hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#EF4444]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
+
+              <div className="relative">
+                <div className="text-2xl mb-3">{p.icon}</div>
+                <div className="font-display font-bold text-2xl text-[#EF4444] mb-1 group-hover:text-[#DC2626] transition-colors duration-200">
+                  {p.stat}
+                </div>
+                <h3 className="font-display font-semibold text-[#0F172A] mb-2 leading-snug">
+                  {p.title}
+                </h3>
+                <p className="font-body text-sm text-[#64748B] leading-relaxed">{p.desc}</p>
+
+                {/* Línea inferior que se enciende */}
+                <div className="absolute bottom-0 left-0 h-0.5 w-0 group-hover:w-full bg-gradient-to-r from-[#EF4444] to-[#F97316] rounded-full transition-all duration-500" />
               </div>
-              <h3 className="font-display font-semibold text-[#0F172A] mb-2 leading-snug">
-                {p.title}
-              </h3>
-              <p className="font-body text-sm text-[#64748B] leading-relaxed">{p.desc}</p>
             </motion.div>
           ))}
         </div>
