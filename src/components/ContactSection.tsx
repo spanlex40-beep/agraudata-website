@@ -7,12 +7,31 @@ export default function ContactSection() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-60px' })
   const [sent, setSent] = useState(false)
-  const [form, setForm] = useState({ name: '', email: '', business: '', message: '' })
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
+  const [form, setForm] = useState({ name: '', email: '', phone: '', business: '', message: '', sector: '' })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // TODO: conectar a backend (Formspree, Resend, etc.)
-    setSent(true)
+    setError('')
+    setLoading(true)
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+      const data = await res.json()
+      if (!res.ok) {
+        setError(data.error ?? 'Error al enviar. Inténtalo de nuevo.')
+      } else {
+        setSent(true)
+      }
+    } catch {
+      setError('Error de conexión. Inténtalo de nuevo.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -98,6 +117,7 @@ export default function ContactSection() {
                     <input
                       type="text"
                       required
+                      maxLength={100}
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
                       placeholder="Tu nombre"
@@ -110,6 +130,7 @@ export default function ContactSection() {
                     </label>
                     <input
                       type="text"
+                      maxLength={200}
                       value={form.business}
                       onChange={(e) => setForm({ ...form, business: e.target.value })}
                       placeholder="Nombre del local"
@@ -118,18 +139,53 @@ export default function ContactSection() {
                   </div>
                 </div>
 
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label className="block font-body text-xs font-medium text-[#94A3B8] mb-1.5">
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      required
+                      value={form.email}
+                      onChange={(e) => setForm({ ...form, email: e.target.value })}
+                      placeholder="tu@email.com"
+                      className="w-full font-body text-sm bg-[#0A0F1E] border border-[#1E293B] rounded-xl px-4 py-3 text-white placeholder-[#475569] focus:outline-none focus:border-[#2563EB] transition-colors"
+                    />
+                  </div>
+                  <div>
+                    <label className="block font-body text-xs font-medium text-[#94A3B8] mb-1.5">
+                      Teléfono
+                    </label>
+                    <input
+                      type="tel"
+                      maxLength={20}
+                      value={form.phone}
+                      onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                      placeholder="+34 600 000 000"
+                      className="w-full font-body text-sm bg-[#0A0F1E] border border-[#1E293B] rounded-xl px-4 py-3 text-white placeholder-[#475569] focus:outline-none focus:border-[#2563EB] transition-colors"
+                    />
+                  </div>
+                </div>
+
                 <div>
                   <label className="block font-body text-xs font-medium text-[#94A3B8] mb-1.5">
-                    Email
+                    Sector
                   </label>
-                  <input
-                    type="email"
+                  <select
                     required
-                    value={form.email}
-                    onChange={(e) => setForm({ ...form, email: e.target.value })}
-                    placeholder="tu@email.com"
-                    className="w-full font-body text-sm bg-[#0A0F1E] border border-[#1E293B] rounded-xl px-4 py-3 text-white placeholder-[#475569] focus:outline-none focus:border-[#2563EB] transition-colors"
-                  />
+                    value={form.sector}
+                    onChange={(e) => setForm({ ...form, sector: e.target.value })}
+                    className="w-full font-body text-sm bg-[#0A0F1E] border border-[#1E293B] rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#2563EB] transition-colors appearance-none"
+                  >
+                    <option value="" disabled>Selecciona tu sector</option>
+                    <option value="restaurante">🍽️ Restaurante / Hostelería</option>
+                    <option value="clinica">🏥 Clínica / Salud</option>
+                    <option value="asesoria">📁 Asesoría / Gestoría</option>
+                    <option value="taller">🔧 Taller / Industria</option>
+                    <option value="autonomo">👤 Autónomo / Freelance</option>
+                    <option value="otro">🏢 Otro</option>
+                  </select>
                 </div>
 
                 <div>
@@ -139,6 +195,7 @@ export default function ContactSection() {
                   <textarea
                     required
                     rows={4}
+                    maxLength={3000}
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                     placeholder="Cuéntame en qué punto estás y qué problema quieres resolver..."
@@ -146,11 +203,16 @@ export default function ContactSection() {
                   />
                 </div>
 
+                {error && (
+                  <p className="font-body text-xs text-red-400 text-center">{error}</p>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full bg-[#2563EB] text-white font-body font-semibold text-sm py-3.5 rounded-xl hover:bg-[#1D4ED8] transition-colors duration-200"
+                  disabled={loading}
+                  className="w-full bg-[#2563EB] text-white font-body font-semibold text-sm py-3.5 rounded-xl hover:bg-[#1D4ED8] transition-colors duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  Solicitar demo gratuita →
+                  {loading ? 'Enviando...' : 'Solicitar demo gratuita →'}
                 </button>
               </form>
             )}
