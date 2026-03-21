@@ -4,9 +4,11 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
 const links = [
-  { label: 'Servicios', href: '#soluciones' },
-  { label: 'Sectores', href: '#sectores' },
-  { label: 'Contacto', href: '#contacto' },
+  { label: 'Servicios', href: '/#soluciones' },
+  { label: 'Sectores', href: '/#sectores' },
+  { label: 'Proyectos', href: '/proyectos' },
+  { label: 'Sobre mí', href: '/sobre-mi' },
+  { label: 'Contacto', href: '/#contacto' },
 ]
 
 export default function Navbar() {
