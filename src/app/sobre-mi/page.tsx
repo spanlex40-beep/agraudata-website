@@ -82,18 +82,20 @@ export default function SobreMiPage() {
 
             <div className="space-y-4 font-body text-[#94A3B8] leading-relaxed">
               <p>
-                Soy especialista en control y automatización de procesos en hostelería.
-                Durante años he trabajado en el control financiero de hoteles y restaurantes,
-                analizando costes, ventas y operativa diaria.
+                Llevo muchos años trabajando en la operativa de negocios, lo que me ha dado
+                algo que no se aprende en ningún curso: conocer el negocio desde dentro.
+                La parte operativa, la financiera y ahora también la de datos e inteligencia artificial.
               </p>
               <p>
-                He visto el mismo problema una y otra vez: negocios que pierden tiempo y
-                dinero por procesos manuales, falta de control y herramientas mal utilizadas.
+                Esa combinación es lo que marca la diferencia. No llego como técnico externo
+                a explicar herramientas — entiendo el problema porque lo he vivido. Sé lo que
+                es cerrar un turno, cuadrar una caja, hacer un escandallo o justificar un
+                coste ante dirección.
               </p>
               <p>
-                Con AgrauData ayudo a solucionar eso: automatizo tareas, organizo la
-                información y convierto los datos en decisiones claras que mejoran la
-                rentabilidad del negocio.
+                Con AgrauData pongo todo eso al servicio de tu negocio: automatizo lo que te
+                roba tiempo, organizo la información que tienes dispersa y convierto tus datos
+                en decisiones claras que mejoran la rentabilidad.
               </p>
             </div>
 
