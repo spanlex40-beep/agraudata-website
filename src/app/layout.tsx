@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Syne, DM_Sans } from 'next/font/google'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import '@/styles/globals.css'
 
 const syne = Syne({
@@ -18,15 +19,21 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   icons: { icon: '/favicon.svg' },
-  title: 'AgrauData — Automation & Data Intelligence Consultant',
+  title: 'AgrauData — Consultor de Automatización y Datos',
   description:
-    'Ayudo a empresas a automatizar procesos y tomar mejores decisiones con datos. Servicios de Business Intelligence, automatización y análisis financiero.',
+    'Ayudo a negocios de hostelería y pymes a automatizar procesos, controlar costes y tomar mejores decisiones con datos. Dashboard, P&L, Menu Engineering y más.',
   openGraph: {
-    title: 'AgrauData — Automation & Data Intelligence Consultant',
+    title: 'AgrauData — Consultor de Automatización y Datos',
     description:
-      'Ayudo a empresas a automatizar procesos y tomar mejores decisiones con datos.',
+      'Automatización, dashboards y control financiero para hostelería y pymes. Soluciones a medida sin plantillas.',
     type: 'website',
     locale: 'es_ES',
+    url: 'https://agraudata.com',
+    siteName: 'AgrauData',
+  },
+  metadataBase: new URL('https://agraudata.com'),
+  alternates: {
+    canonical: 'https://agraudata.com',
   },
 }
 
@@ -34,6 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es" className={`${syne.variable} ${dmSans.variable}`}>
       <body>{children}</body>
+      <GoogleAnalytics gaId="G-CGXVRNNBB2" />
     </html>
   )
 }
