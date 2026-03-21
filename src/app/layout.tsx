@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Syne, DM_Sans } from 'next/font/google'
 import { GoogleAnalytics } from '@next/third-parties/google'
+import WhatsAppButton from '@/components/WhatsAppButton'
 import '@/styles/globals.css'
 
 const syne = Syne({
@@ -40,7 +41,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es" className={`${syne.variable} ${dmSans.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <WhatsAppButton />
+      </body>
       <GoogleAnalytics gaId="G-CGXVRNNBB2" />
     </html>
   )
