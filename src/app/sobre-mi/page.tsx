@@ -17,8 +17,8 @@ const skills = [
 ]
 
 const values = [
-  { number: '15+', label: 'Años en control financiero' },
-  { number: '70%', label: 'Reducción media de tiempo en reporting' },
+  { number: '2', label: 'Programas propios desarrollados desde cero' },
+  { number: '70%', label: 'Reducción media de tiempo en tareas manuales' },
   { number: '100%', label: 'Soluciones a medida, sin plantillas' },
 ]
 
