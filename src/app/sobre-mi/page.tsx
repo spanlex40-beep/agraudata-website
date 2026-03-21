@@ -51,7 +51,7 @@ export default function SobreMiPage() {
             <div className="relative">
               <div className="absolute -inset-1 rounded-3xl bg-gradient-to-br from-[#2563EB]/30 to-[#c8f135]/10 blur-xl" />
               <img
-                src="/alexandre.jpg"
+                src="/Alexandre.jpg"
                 alt="Alexandre Grau — AgrauData"
                 className="relative w-72 h-80 object-cover object-top rounded-3xl border border-[#1E293B]"
                 style={{ objectPosition: 'center 10%' }}
