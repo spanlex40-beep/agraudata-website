@@ -10,6 +10,7 @@ export default function ContactSection() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [form, setForm] = useState({ name: '', email: '', phone: '', business: '', message: '', sector: '' })
+  const [rgpd, setRgpd] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -203,13 +204,52 @@ export default function ContactSection() {
                   />
                 </div>
 
+                {/* RGPD */}
+                <label className="flex items-start gap-3 cursor-pointer group">
+                  <div className="relative flex-shrink-0 mt-0.5">
+                    <input
+                      type="checkbox"
+                      required
+                      checked={rgpd}
+                      onChange={(e) => setRgpd(e.target.checked)}
+                      className="sr-only"
+                    />
+                    <div
+                      className={`w-4 h-4 rounded border transition-colors ${
+                        rgpd
+                          ? 'bg-[#2563EB] border-[#2563EB]'
+                          : 'bg-[#0A0F1E] border-[#1E293B] group-hover:border-[#2563EB]'
+                      } flex items-center justify-center`}
+                    >
+                      {rgpd && (
+                        <svg width="10" height="8" viewBox="0 0 10 8" fill="none" aria-hidden>
+                          <path d="M1 4l2.5 2.5L9 1" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      )}
+                    </div>
+                  </div>
+                  <span className="font-body text-xs text-[#64748B] leading-relaxed">
+                    He leído y acepto la{' '}
+                    <a
+                      href="/privacidad"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#2563EB] hover:underline underline-offset-2"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      Política de Privacidad
+                    </a>
+                    {' '}y consiento el tratamiento de mis datos para atender mi consulta.
+                  </span>
+                </label>
+
                 {error && (
                   <p className="font-body text-xs text-red-400 text-center">{error}</p>
                 )}
 
                 <button
                   type="submit"
-                  disabled={loading}
+                  disabled={loading || !rgpd}
                   className="w-full bg-[#2563EB] text-white font-body font-semibold text-sm py-3.5 rounded-xl hover:bg-[#1D4ED8] transition-colors duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {loading ? 'Enviando...' : 'Solicitar demo gratuita →'}
