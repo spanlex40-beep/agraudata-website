@@ -13,30 +13,43 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    slug: 'menu-engineering',
+    title: 'Menu Engineering: rentabilidad real por plato',
+    client: 'Sector hostelería',
+    sector: 'Hostelería',
+    sectorIcon: '🍽️',
+    shortDesc: 'Análisis de popularidad y margen de cada plato para tomar decisiones de carta',
+    longDesc:
+      'El Menu Engineering es la herramienta que todo restaurante debería tener y casi ninguno aplica. Desarrollamos un sistema que cruza las ventas reales con el coste de cada plato para clasificarlos en cuatro categorías: estrellas, caballos de batalla, puzzles y perros. Con ese análisis el propietario sabe exactamente qué platos potenciar, cuáles retirar, cuáles subir de precio y cuáles necesitan un rediseño de receta.',
+    result: 'Decisiones de carta basadas en datos, no en intuición',
+    resultDetail: 'Un restaurante que aplica Menu Engineering tiene una ventaja competitiva real: cada cambio de carta está justificado con números. El margen medio de menú puede mejorar entre un 5% y un 15% con ajustes que el cliente ni nota.',
+    tags: ['Menu Engineering', 'Control de costes', 'Escandallos', 'Hostelería', 'Rentabilidad'],
+  },
+  {
+    slug: 'pyg-control-financiero',
+    title: 'P&L: cuenta de resultados automatizada',
+    client: 'Sector hostelería y servicios',
+    sector: 'Control financiero',
+    sectorIcon: '📈',
+    shortDesc: 'Cuenta de pérdidas y ganancias mensual automática con análisis de desviaciones',
+    longDesc:
+      'La mayoría de pequeños negocios no saben si ganan o pierden dinero hasta que hablan con su gestor a final de año. Con un P&L bien construido y automatizado el propietario tiene cada mes una foto clara: ingresos reales, costes fijos, costes variables, EBITDA y resultado neto. Desarrollamos sistemas de P&L adaptados a cada negocio, con alertas de desviación y comparativa contra presupuesto.',
+    result: 'Cuenta de resultados disponible antes del día 5 de cada mes',
+    resultDetail: 'Sin esperar al gestor, sin consolidar Excel manualmente. El propietario tiene el P&L completo nada más cerrar el mes y puede tomar decisiones con datos frescos, no con información de hace 3 meses.',
+    tags: ['P&L', 'Control financiero', 'Reporting', 'Automatización', 'Business Intelligence'],
+  },
+  {
     slug: 'facturacion-autonomos',
     title: 'Programa de facturación y presupuestos para autónomos',
-    client: 'Desarrollo propio',
+    client: 'Autónomos y freelances',
     sector: 'Autónomo / Freelance',
     sectorIcon: '👤',
-    shortDesc: 'Gestión completa de presupuestos, facturas y vencimientos de pago',
+    shortDesc: 'Gestión completa de presupuestos, facturas y vencimientos de cobro',
     longDesc:
-      'Herramienta desarrollada a medida para cubrir el ciclo completo de facturación de un autónomo: creación de presupuestos, conversión a facturas, control de vencimientos de cobro y alertas automáticas de impago. Sin suscripciones, sin nube, sin coste mensual. Todo funciona en local con un solo archivo.',
+      'Herramienta desarrollada a medida para cubrir el ciclo completo de facturación de un autónomo: creación de presupuestos, conversión a facturas, control de vencimientos de cobro y alertas automáticas de impago. Sin suscripciones, sin nube, sin coste mensual. Todo funciona en local, es tuyo para siempre.',
     result: 'Control total del ciclo de facturación sin software externo',
     resultDetail: 'El autónomo tiene en un solo lugar todo el historial de presupuestos y facturas, sabe en todo momento qué cobros están pendientes y cuándo vencen, y genera documentos con formato profesional en segundos.',
     tags: ['Facturación', 'Presupuestos', 'Autónomos', 'Gestión financiera', 'Herramienta propia'],
-  },
-  {
-    slug: 'cuadrante-personal',
-    title: 'Programa de cuadrantes de personal',
-    client: 'Desarrollo propio',
-    sector: 'Hostelería / RRHH',
-    sectorIcon: '🍽️',
-    shortDesc: 'Gestión visual de turnos, vacaciones y disponibilidad del equipo',
-    longDesc:
-      'Herramienta desarrollada a medida para la planificación de cuadrantes de personal. Permite asignar turnos, gestionar vacaciones, controlar horas por empleado y detectar conflictos de disponibilidad de forma visual. Diseñada para negocios con equipos variables como restaurantes, hoteles o clínicas. En proceso de migración a aplicación de escritorio.',
-    result: 'Cuadrantes semanales en minutos en lugar de horas',
-    resultDetail: 'El responsable ve de un vistazo quién trabaja cada día, cuántas horas lleva cada empleado y dónde hay huecos. Sin errores, sin olvidos. Próximamente disponible como app de escritorio.',
-    tags: ['RRHH', 'Hostelería', 'Planificación de personal', 'Turnos', 'Herramienta propia'],
   },
   {
     slug: 'pagina-web-personalizada',
@@ -46,22 +59,9 @@ export const projects: Project[] = [
     sectorIcon: '🌐',
     shortDesc: 'Web moderna, rápida y optimizada para captar clientes desde el primer día',
     longDesc:
-      'Desarrollo de páginas web profesionales a medida para pequeñas empresas y autónomos que quieren una presencia digital real. Sin plantillas genéricas: diseño adaptado a la identidad del negocio, optimizada para móvil, con formulario de contacto inteligente y velocidad de carga máxima. Incluye dominio, hosting y configuración completa.',
+      'Desarrollo de páginas web profesionales a medida para pequeñas empresas y autónomos que quieren una presencia digital real. Sin plantillas genéricas: diseño adaptado a la identidad del negocio, optimizada para móvil, con formulario de contacto inteligente que responde de forma automática y personalizada según el sector del visitante.',
     result: 'Web profesional operativa en menos de 2 semanas',
     resultDetail: 'El cliente tiene una web que representa su negocio de verdad, recibe consultas directamente por email con respuesta automática personalizada y aparece en Google desde el primer día.',
     tags: ['Next.js', 'Diseño web', 'SEO', 'Formulario inteligente', 'Presencia digital'],
-  },
-  {
-    slug: 'presupuesto-gastos-personal',
-    title: 'Control de presupuesto y gastos personales',
-    client: 'Desarrollo propio',
-    sector: 'Finanzas personales',
-    sectorIcon: '💰',
-    shortDesc: 'Dashboard de ingresos, gastos, categorías y ahorro mensual',
-    longDesc:
-      'Herramienta desarrollada a medida para tener el control total de las finanzas personales: registro de ingresos y gastos por categorías, seguimiento del presupuesto mensual, evolución del ahorro y alertas cuando se supera lo planificado. Visual, rápida y sin necesidad de apps externas ni suscripciones.',
-    result: 'Control real del dinero mes a mes',
-    resultDetail: 'El usuario sabe exactamente en qué gasta, cuánto ahorra y si va bien o mal respecto a su presupuesto. Tomar decisiones financieras deja de ser una estimación para convertirse en algo basado en datos reales.',
-    tags: ['Finanzas personales', 'Presupuesto', 'Control de gastos', 'Ahorro', 'Herramienta propia'],
   },
 ]
