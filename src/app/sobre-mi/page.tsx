@@ -17,7 +17,7 @@ const skills = [
 ]
 
 const values = [
-  { number: '2', label: 'Programas propios desarrollados desde cero' },
+  { number: '4+', label: 'Proyectos propios desarrollados desde cero' },
   { number: '70%', label: 'Reducción media de tiempo en tareas manuales' },
   { number: '100%', label: 'Soluciones a medida, sin plantillas' },
 ]
