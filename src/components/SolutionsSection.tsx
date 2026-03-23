@@ -60,8 +60,24 @@ const groups = [
     desc: 'Programas personalizados que se adaptan a cómo trabajas tú, no al revés.',
     items: [
       { name: 'Apps de escritorio locales', detail: 'Sin internet, sin mensualidades, tuyo para siempre' },
-{ name: 'Excel avanzado + VBA', detail: 'Herramientas potentes sin cambiar lo que ya usas' },
+      { name: 'Excel avanzado + VBA', detail: 'Herramientas potentes sin cambiar lo que ya usas' },
       { name: 'Formación incluida', detail: 'Te enseñamos a sacarle el máximo partido' },
+    ],
+  },
+  {
+    icon: '🌐',
+    label: 'Páginas Web',
+    id: 'web',
+    color: 'bg-[#F5F3FF] text-[#6D28D9] border-[#C4B5FD]',
+    accent: '#6D28D9',
+    title: 'Tu presencia online, al siguiente nivel',
+    desc: 'Webs rápidas, modernas y diseñadas para convertir visitas en clientes. Pide tu maqueta gratis antes de comprometerte con nada.',
+    items: [
+      { name: 'Diseño totalmente a medida', detail: 'Sin plantillas genéricas — tu web refleja tu negocio' },
+      { name: 'Maqueta visual gratuita', detail: 'Te mostramos cómo quedaría tu web antes de empezar, sin coste' },
+      { name: 'Optimizado para móvil', detail: 'El 70% de las visitas vienen del teléfono' },
+      { name: 'Velocidad y SEO básico', detail: 'Rápido, bien estructurado y encontrable en Google' },
+      { name: 'Formulario de contacto integrado', detail: 'Tus clientes te escriben directamente desde la web' },
     ],
   },
 ]

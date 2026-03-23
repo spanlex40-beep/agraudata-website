@@ -4,6 +4,7 @@ import ServicesStrip from '@/components/ServicesStrip'
 import ProblemsSection from '@/components/ProblemsSection'
 import SolutionsSection from '@/components/SolutionsSection'
 import OtherSectorsSection from '@/components/OtherSectorsSection'
+import WebDesignSection from '@/components/WebDesignSection'
 import ContactSection from '@/components/ContactSection'
 import Footer from '@/components/Footer'
 
@@ -16,6 +17,7 @@ export default function Home() {
       <ProblemsSection />
       <SolutionsSection />
       <OtherSectorsSection />
+      <WebDesignSection />
       <ContactSection />
       <Footer />
     </>
