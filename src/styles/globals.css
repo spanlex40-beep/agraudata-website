@@ -16,9 +16,9 @@
   --color-dark-muted: #64748B;
 
   /* Brand */
-  --color-accent: #2563EB;
-  --color-accent-hover: #1D4ED8;
-  --color-accent-light: #EFF6FF;
+  --color-accent: #c8f135;
+  --color-accent-hover: #b8e020;
+  --color-accent-light: #f0fca8;
 
   /* Semantic */
   --color-green: #10B981;
@@ -45,7 +45,7 @@ html { scroll-behavior: smooth; }
 body {
   background-color: var(--color-bg);
   color: var(--color-ink);
-  font-family: var(--font-dm-sans), sans-serif;
+  font-family: var(--font-body), sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -55,6 +55,46 @@ body {
 }
 
 ::selection {
-  background-color: #DBEAFE;
-  color: var(--color-accent);
+  background-color: #f0fca8;
+  color: #0F0F1A;
 }
+
+/* ─── Animations ──────────────────────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes float-reverse {
+  0%, 100% { transform: translateY(-20px); }
+  50% { transform: translateY(0px); }
+}
+
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(8px); }
+}
+
+.animate-float {
+  animation: float 20s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 28s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 24s ease-in-out infinite;
+}
+
+.animate-scroll-bounce {
+  animation: scroll-bounce 2s ease-in-out infinite;
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }

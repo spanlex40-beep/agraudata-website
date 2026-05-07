@@ -5,16 +5,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: '#F7F6F3',
-        accent: '#0047FF',
-        'accent-light': '#E8EFFF',
+        bg: '#FAFAF8',
+        accent: '#c8f135',
+        'accent-light': '#f0fca8',
         ink: '#0F0F1A',
         muted: '#6B6B7A',
-        border: '#E3E1DC',
+        border: '#E8E8E4',
       },
       fontFamily: {
-        display: ['var(--font-syne)', 'sans-serif'],
-        body: ['var(--font-dm-sans)', 'sans-serif'],
+        display: ['var(--font-display)', 'serif'],
+        body: ['var(--font-body)', 'sans-serif'],
       },
       borderRadius: {
         xl: '1rem',

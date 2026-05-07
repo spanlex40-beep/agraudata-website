@@ -1,10 +1,7 @@
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
-import ServicesStrip from '@/components/ServicesStrip'
-import ProblemsSection from '@/components/ProblemsSection'
-import SolutionsSection from '@/components/SolutionsSection'
-import OtherSectorsSection from '@/components/OtherSectorsSection'
-import WebDesignSection from '@/components/WebDesignSection'
+import OverviewSection from '@/components/OverviewSection'
+import AboutSection from '@/components/AboutSection'
 import ContactSection from '@/components/ContactSection'
 import Footer from '@/components/Footer'
 
@@ -13,11 +10,8 @@ export default function Home() {
     <>
       <Navbar />
       <Hero />
-      <ServicesStrip />
-      <ProblemsSection />
-      <SolutionsSection />
-      <OtherSectorsSection />
-      <WebDesignSection />
+      <OverviewSection />
+      <AboutSection />
       <ContactSection />
       <Footer />
     </>

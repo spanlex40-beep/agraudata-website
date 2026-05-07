@@ -7,6 +7,7 @@ import { google } from 'googleapis'
 const ALLOWED_ORIGINS = [
   'https://agraudata.com',
   'https://www.agraudata.com',
+  ...(process.env.NODE_ENV === 'development' ? ['http://localhost:3000', 'http://localhost:3002'] : []),
 ]
 
 // ─── Rate limiting (in-memory) ────────────────────────────────────────────────
