@@ -32,7 +32,7 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-screen lg:min-h-0 lg:py-24">
 
           {/* Columna izquierda */}
-          <div className="order-2 lg:order-1">
+          <div className="order-1 lg:order-1">
 
             <motion.p
               {...fadeUp(0)}
@@ -126,7 +126,7 @@ export default function Hero() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.08, ease: 'easeOut' }}
-            className="order-1 lg:order-2 flex justify-center lg:justify-end"
+            className="order-2 lg:order-2 flex justify-center lg:justify-end"
           >
             <div className="relative w-full max-w-[420px]">
               <div className="absolute inset-0 translate-x-3 translate-y-3 rounded-2xl bg-[#c8f135]/20" />
