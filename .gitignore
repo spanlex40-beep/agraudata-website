@@ -22,3 +22,8 @@ Thumbs.db
 
 # Vercel
 .vercel
+.env.*
+*.local.json
+.superpowers/
+.claude/settings.local.json
+*.tsbuildinfo
