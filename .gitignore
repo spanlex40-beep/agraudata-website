@@ -27,3 +27,4 @@ Thumbs.db
 .superpowers/
 .claude/settings.local.json
 *.tsbuildinfo
+!.env.example
