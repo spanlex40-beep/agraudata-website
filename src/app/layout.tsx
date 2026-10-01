@@ -67,7 +67,7 @@ const schemaLocalBusiness = {
     addressCountry: 'ES',
   },
   sameAs: [
-    'https://www.linkedin.com/in/alexandre-grau',
+    'https://www.linkedin.com/in/alexandre-grau-b3bb75189',
   ],
   priceRange: '€€',
   knowsAbout: ['automatización de datos', 'dashboards', 'hostelería', 'control financiero', 'Power BI', 'Excel'],
