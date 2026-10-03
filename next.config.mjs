@@ -2,15 +2,16 @@
 const nextConfig = {
   async headers() {
     const isDev = process.env.NODE_ENV === 'development'
+    const analyticsHost = 'https://agraudata-analytics.vercel.app'
     const csp = [
       "default-src 'self'",
       isDev
-        ? "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com"
-        : "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com",
+        ? `script-src 'self' 'unsafe-inline' 'unsafe-eval' ${analyticsHost}`
+        : `script-src 'self' 'unsafe-inline' ${analyticsHost}`,
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "font-src 'self' data: https://fonts.gstatic.com",
       "img-src 'self' data: https:",
-      "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com",
+      `connect-src 'self' ${analyticsHost}`,
       "frame-ancestors 'none'",
       "base-uri 'self'",
       "form-action 'self'",
