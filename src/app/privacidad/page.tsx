@@ -102,6 +102,7 @@ export default function PrivacidadPage() {
                     ['Responder a tu consulta o solicitud de demo', 'Consentimiento (art. 6.1.a RGPD)'],
                     ['Enviarte información sobre servicios relacionados', 'Consentimiento (art. 6.1.a RGPD)'],
                     ['Registro interno de clientes potenciales', 'Interés legítimo (art. 6.1.f RGPD)'],
+                    ['Estadísticas agregadas de visitas a la web (sin cookies)', 'Interés legítimo (art. 6.1.f RGPD)'],
                   ].map(([fin, base]) => (
                     <tr key={fin}>
                       <td className="py-3 pr-6">{fin}</td>
@@ -151,6 +152,10 @@ export default function PrivacidadPage() {
                 {
                   name: 'Vercel Inc.',
                   desc: 'Alojamiento web y ejecución de funciones serverless. Servidores en UE.',
+                },
+                {
+                  name: 'Umami / Neon',
+                  desc: 'Analítica web propia, sin cookies ni almacenamiento de la dirección IP. Alojada por AgrauData en Vercel con base de datos Neon en Fráncfort (UE).',
                 },
               ].map((p) => (
                 <li key={p.name} className="flex items-start gap-2">

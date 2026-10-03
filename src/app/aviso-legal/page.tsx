@@ -138,9 +138,12 @@ export default function AvisoLegalPage() {
             </h2>
             <p>
               Este sitio web no utiliza cookies de seguimiento ni publicidad de terceros.
-              Únicamente se utilizan cookies técnicas estrictamente necesarias para el
-              funcionamiento del sitio (sesión, preferencias de usuario), que no requieren
-              consentimiento del usuario según la normativa vigente.
+              Para conocer cuántas personas visitan la web usamos Umami, una herramienta de
+              analítica alojada por AgrauData que no emplea cookies ni almacena la dirección
+              IP del visitante, y solo genera estadísticas agregadas. Únicamente se utilizan
+              cookies técnicas estrictamente necesarias para el funcionamiento del sitio
+              (sesión, preferencias de usuario), que no requieren consentimiento del usuario
+              según la normativa vigente.
             </p>
           </section>
 

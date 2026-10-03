@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Fraunces, Plus_Jakarta_Sans } from 'next/font/google'
-import { GoogleAnalytics } from '@next/third-parties/google'
+import Script from 'next/script'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import '@/styles/globals.css'
 
@@ -83,7 +83,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         {children}
         <WhatsAppButton />
-        <GoogleAnalytics gaId="G-CGXVRNNBB2" />
+        <Script
+          defer
+          src="https://agraudata-analytics.vercel.app/script.js"
+          data-website-id="4d05ca4e-0351-4593-a6a1-157973d6b15a"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   )
